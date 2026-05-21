@@ -1,0 +1,7 @@
+.timerRow { display: flex; align-items: center; gap: 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 0.75rem 1.25rem; }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.statLabel { font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.15em; color: var(--text-muted); }
+.statValue { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.time { color: var(--accent); text-shadow: 0 0 10px var(--accent-glow); }
+.mistakes { color: var(--danger); }
+.pausedBadge { margin-left: auto; font-family: var(--font-display); font-size: 0.65rem; color: var(--warning); letter-spacing: 0.1em; animation: pulse 1.5s ease infinite; }

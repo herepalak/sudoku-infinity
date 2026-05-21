@@ -1,0 +1,113 @@
+.boardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 1px;
+  background: var(--border-bright);
+  border: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 0 40px var(--accent-glow), var(--shadow-card);
+  overflow: hidden;
+  width: min(520px, 92vw);
+  height: min(520px, 92vw);
+}
+
+.cell {
+  background: var(--bg-secondary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.12s ease;
+  outline: none;
+  aspect-ratio: 1;
+}
+
+.cell:hover {
+  background: var(--bg-hover);
+}
+
+/* Highlight states */
+.cellSelected {
+  background: var(--cell-selected-bg) !important;
+  box-shadow: inset 0 0 0 2px var(--accent);
+  z-index: 1;
+}
+.cellRelated {
+  background: var(--cell-related-bg) !important;
+}
+.cellSame {
+  background: var(--cell-same-bg) !important;
+}
+
+/* Box borders */
+.borderRight  { border-right:  2px solid var(--accent) !important; }
+.borderBottom { border-bottom: 2px solid var(--accent) !important; }
+
+/* Value */
+.cellValue {
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 3.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--cell-user);
+  display: block;
+  line-height: 1;
+  user-select: none;
+}
+
+.cellGiven .cellValue {
+  color: var(--cell-given);
+  font-weight: 700;
+}
+
+.cellError {
+  background: rgba(255, 68, 102, 0.12) !important;
+}
+.cellError .cellValue {
+  color: var(--cell-error) !important;
+}
+
+/* Error dot */
+.errorDot {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--danger);
+  box-shadow: 0 0 6px var(--danger);
+}
+
+/* Notes grid */
+.notesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 2px;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: clamp(0.35rem, 1.2vw, 0.55rem);
+  color: transparent;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.noteVisible {
+  color: var(--accent2);
+}

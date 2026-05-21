@@ -1,0 +1,51 @@
+.page { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* HERO */
+.hero { min-height: 85vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 4rem 0; }
+.heroBadge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border: 1px solid var(--accent); border-radius: 20px; font-size: 0.7rem; color: var(--accent); font-family: var(--font-display); letter-spacing: 0.1em; margin-bottom: 1.5rem; }
+.heroTitle { font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 900; line-height: 1; letter-spacing: 0.05em; margin-bottom: 1.5rem; }
+.heroAccent { color: var(--accent); text-shadow: 0 0 40px var(--accent-glow); }
+.heroSubtitle { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; max-width: 480px; }
+.heroCTA { display: flex; gap: 1rem; flex-wrap: wrap; }
+.heroGrid { display: flex; justify-content: center; align-items: center; }
+
+/* Mini board */
+.miniBoard { display: grid; grid-template-columns: repeat(9, 1fr); gap: 1px; background: var(--border-bright); border: 3px solid var(--accent); border-radius: 8px; box-shadow: 0 0 60px var(--accent-glow); overflow: hidden; width: min(400px, 90vw); height: min(400px, 90vw); }
+.miniCell { background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: clamp(0.6rem, 2.5vw, 1rem); font-weight: 700; color: var(--text-muted); }
+.miniCellGiven { color: var(--cell-given); }
+
+/* SECTIONS */
+.section { padding: 5rem 0; }
+.sectionTitle { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.5rem); text-align: center; letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+.sectionSub { text-align: center; color: var(--text-secondary); margin-bottom: 3rem; }
+
+/* DIFFICULTIES */
+.diffGrid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1rem; }
+.diffCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; cursor: default; transition: all 0.2s; border-top: 3px solid var(--d-color); }
+.diffDot { width: 12px; height: 12px; border-radius: 50%; background: var(--d-color); box-shadow: 0 0 12px var(--d-color); }
+.diffName { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; color: var(--text-primary); letter-spacing: 0.08em; }
+.diffDesc { font-size: 0.7rem; color: var(--text-muted); }
+
+/* FEATURES */
+.featuresGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.featureCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.75rem 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; cursor: default; transition: all 0.25s; }
+.featureCard:hover { box-shadow: 0 8px 32px color-mix(in srgb, var(--f-color) 20%, transparent); }
+.featureIcon { font-size: 1.8rem; }
+.featureTitle { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text-primary); }
+.featureDesc { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* STATS */
+.statsBanner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 3rem 2rem; margin: 2rem 0; }
+.statItem { text-align: center; display: flex; flex-direction: column; gap: 0.5rem; }
+.statValue { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--accent); text-shadow: 0 0 20px var(--accent-glow); }
+.statLabel { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.1em; }
+
+/* CTA */
+.ctaSection { padding: 4rem 0 6rem; }
+.ctaBox { background: var(--bg-card); border: 1px solid var(--accent); border-radius: var(--radius-xl); padding: 4rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem; box-shadow: 0 0 60px var(--accent-glow); }
+.ctaBox h2 { font-family: var(--font-display); font-size: 2rem; letter-spacing: 0.08em; }
+.ctaBox p { color: var(--text-secondary); margin-bottom: 1rem; }
+
+@media (max-width: 1100px) { .featuresGrid { grid-template-columns: repeat(2, 1fr); } .diffGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; padding: 2rem 0; gap: 2rem; } .heroSubtitle { margin: 0 auto 2rem; } .heroCTA { justify-content: center; } .heroGrid { display: none; } .statsBanner { grid-template-columns: repeat(2, 1fr); } .featuresGrid { grid-template-columns: 1fr 1fr; } .diffGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .featuresGrid { grid-template-columns: 1fr; } .diffGrid { grid-template-columns: repeat(3, 1fr); } }

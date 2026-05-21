@@ -1,0 +1,11 @@
+.panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1rem; }
+.title { font-family: var(--font-display); font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+.grid { display: flex; flex-direction: column; gap: 0.4rem; }
+.powerBtn { display: flex; align-items: center; gap: 0.75rem; padding: 0.6rem 0.75rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s; }
+.powerBtn:hover:not(:disabled) { border-color: var(--pu-color); background: var(--bg-hover); box-shadow: 0 0 12px color-mix(in srgb, var(--pu-color) 30%, transparent); }
+.powerBtnDisabled { opacity: 0.4; cursor: not-allowed; }
+.powerInfo { flex: 1; text-align: left; }
+.powerLabel { display: block; font-size: 0.75rem; font-weight: 600; color: var(--text-primary); }
+.powerDesc { display: block; font-size: 0.6rem; color: var(--text-muted); }
+.powerCount { width: 24px; height: 24px; border-radius: 50%; background: var(--pu-color); color: white; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); }
+.powerCountEmpty { background: var(--bg-hover); color: var(--text-muted); }

@@ -1,0 +1,24 @@
+.page { max-width: 800px; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 2rem; }
+.title { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 0.08em; color: var(--accent); }
+.section { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.sectionTitle { font-family: var(--font-display); font-size: 0.9rem; letter-spacing: 0.1em; }
+.sectionSub { color: var(--text-secondary); font-size: 0.82rem; margin-top: -0.75rem; }
+.themeGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.themeCard { display: flex; align-items: center; gap: 1rem; padding: 1rem; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; text-align: left; }
+.themeCard:hover { border-color: var(--tc); }
+.themeCardActive { border-color: var(--tc); background: color-mix(in srgb, var(--tc) 8%, var(--bg-secondary)); box-shadow: 0 0 12px color-mix(in srgb, var(--tc) 20%, transparent); }
+.themePreview { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 12px currentColor; }
+.themeInfo { flex: 1; }
+.themeName { display: block; font-weight: 600; font-size: 0.85rem; color: var(--text-primary); }
+.themeDesc { display: block; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.15rem; }
+.themeCheck { color: var(--tc); font-size: 1.2rem; font-weight: 700; }
+.diffGrid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.diffBtn { padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-secondary); cursor: pointer; font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.08em; transition: all 0.2s; }
+.diffBtn:hover { border-color: var(--accent); color: var(--accent); }
+.diffActive { border-color: var(--accent); background: var(--accent-glow); color: var(--accent); }
+.accountInfo { display: flex; flex-direction: column; gap: 0.6rem; }
+.infoRow { display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+.infoRow:last-child { border-bottom: none; }
+.infoKey { font-size: 0.8rem; color: var(--text-muted); }
+.infoVal { font-size: 0.85rem; font-weight: 600; color: var(--text-primary); font-family: var(--font-mono); }
+@media (max-width: 600px) { .themeGrid { grid-template-columns: 1fr; } }

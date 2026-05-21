@@ -1,0 +1,33 @@
+.page { max-width: 900px; margin: 0 auto; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+.profileCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 2rem; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+.avatarLarge { width: 80px; height: 80px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; font-weight: 700; box-shadow: 0 0 30px var(--accent-glow); flex-shrink: 0; }
+.profileInfo { flex: 1; }
+.displayName { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.05em; }
+.username { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.2rem; }
+.levelBadge { display: inline-block; margin-top: 0.5rem; padding: 0.2rem 0.75rem; background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 20px; font-family: var(--font-display); font-size: 0.65rem; color: var(--accent); }
+.xpBar { min-width: 250px; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; }
+.xpLabel { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); }
+.xpTrack { height: 8px; background: var(--bg-secondary); border-radius: 4px; overflow: hidden; }
+.xpFill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-bright)); border-radius: 4px; box-shadow: 0 0 8px var(--accent-glow); }
+.xpNext { font-size: 0.68rem; color: var(--text-muted); text-align: right; }
+.streakRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.statCard { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center; display: flex; flex-direction: column; gap: 0.4rem; border-top: 3px solid var(--s-color); }
+.statCardVal { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--s-color); }
+.statCardLabel { font-size: 0.68rem; color: var(--text-muted); letter-spacing: 0.08em; }
+.tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0; }
+.tab { padding: 0.6rem 1.25rem; border: none; background: none; cursor: pointer; font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--text-muted); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.2s; }
+.tab:hover { color: var(--accent); }
+.tabActive { color: var(--accent); border-bottom-color: var(--accent); }
+.statsGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.statItem { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.3rem; }
+.statLabel { font-size: 0.7rem; color: var(--text-muted); }
+.statValue { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; color: var(--text-primary); }
+.achGrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem; }
+.noAch { grid-column: 1/-1; text-align: center; padding: 3rem; color: var(--text-muted); }
+.achCard { background: var(--bg-card); border: 1px solid; border-radius: var(--radius-lg); padding: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+.achIcon { font-size: 2rem; flex-shrink: 0; }
+.achInfo { display: flex; flex-direction: column; gap: 0.2rem; }
+.achName { font-weight: 600; font-size: 0.85rem; }
+.achDesc { font-size: 0.72rem; color: var(--text-secondary); }
+.achRarity { font-size: 0.65rem; font-family: var(--font-display); letter-spacing: 0.08em; }
+@media (max-width: 700px) { .streakRow { grid-template-columns: repeat(2, 1fr); } .statsGrid { grid-template-columns: repeat(2, 1fr); } .profileCard { flex-direction: column; align-items: flex-start; } }

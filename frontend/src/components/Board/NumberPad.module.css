@@ -1,0 +1,130 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Mode toggle */
+.modeRow {
+  display: flex;
+  gap: 0.5rem;
+}
+.modeBtn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.2s;
+}
+.modeActive {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Number grid */
+.numGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.numBtn {
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.numBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.numBtn:hover::before { opacity: 0.08; }
+.numBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.numBtn.complete {
+  border-color: var(--success);
+  opacity: 0.5;
+}
+
+.numBtnValue {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.numBtnCount {
+  font-size: 0.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  position: relative;
+  z-index: 1;
+}
+
+.checkmark {
+  font-size: 0.9rem;
+  color: var(--success);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+.actionBtn {
+  flex: 1;
+  padding: 0.6rem 0.4rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  transition: all 0.2s;
+}
+.actionBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-hover);
+}
+.actionBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+.hintBtn:hover {
+  border-color: var(--accent3);
+  color: var(--accent3);
+}

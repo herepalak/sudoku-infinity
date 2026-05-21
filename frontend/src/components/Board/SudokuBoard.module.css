@@ -1,0 +1,117 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: min(540px, 95vw);
+  height: min(540px, 95vw);
+  border: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 30px var(--accent-glow), var(--shadow-deep);
+  background: var(--bg-primary);
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cell:hover:not(.given) {
+  background: var(--bg-hover);
+}
+
+/* ── STATES ─────────────────────────────────────── */
+.selected {
+  background: var(--cell-selected-bg) !important;
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+.related {
+  background: var(--cell-related-bg);
+}
+
+.sameNum {
+  background: var(--cell-same-bg);
+}
+
+.error {
+  animation: shake 0.3s ease;
+}
+.error .cellValue {
+  color: var(--cell-error) !important;
+}
+
+/* ── THICK BORDERS (box dividers) ───────────────── */
+.borderRight {
+  border-right: 2.5px solid var(--border-bright);
+}
+.borderBottom {
+  border-bottom: 2.5px solid var(--border-bright);
+}
+
+/* ── CELL VALUES ─────────────────────────────────── */
+.cellValue {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.given .cellValue {
+  color: var(--cell-given);
+}
+
+.userFilled .cellValue {
+  color: var(--cell-user);
+  filter: drop-shadow(0 0 4px var(--accent-glow));
+}
+
+/* ── PENCIL MARKS ────────────────────────────────── */
+.noteGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+}
+
+.noteCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.45rem, 1.2vw, 0.6rem);
+  font-family: var(--font-mono);
+  color: var(--accent3);
+  opacity: 0.85;
+  line-height: 1;
+}
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+@keyframes shake {
+  0%,100% { transform: translateX(0); background: var(--cell-error) !important; }
+  25%     { transform: translateX(-4px); }
+  75%     { transform: translateX(4px); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .board {
+    width: min(380px, 98vw);
+    height: min(380px, 98vw);
+  }
+}
